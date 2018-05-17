@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/#" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+    <a href="/login" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white">Login</a>
+  </div>
+
+</div>
+<header class="w3-container w3-red w3-center" style="padding:64px 16px">
+  <h1 class="w3-margin w3-jumbo">Welcome to AES!</h1>
+  <p class="w3-xlarge">Don't have a account yet? Sign up for one!</p>
+  <a class="w3-button w3-black w3-padding-large w3-large w3-margin-top" href="/signup">Sign up</a>
+</header>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>User Login</h1>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
