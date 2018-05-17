@@ -1,0 +1,418 @@
+[INFO] (aes.utils) Arguments:
+[INFO] (aes.utils)   batch_size: 32
+[INFO] (aes.utils)   char_cnn_kernel: 3
+[INFO] (aes.utils)   char_per_word: 7
+[INFO] (aes.utils)   cnn_kernel: 3
+[INFO] (aes.utils)   command: train.py -tr data/train_34/train.tsv -tu data/train_34/dev.tsv -ts data/train_34/test.tsv -o output_tst -p 4 -e 50 -m gate-positional --emb embeddings.w2v.txt
+[INFO] (aes.utils)   dev_path: data/train_34/dev.tsv
+[INFO] (aes.utils)   emb_dim: 50
+[INFO] (aes.utils)   emb_path: embeddings.w2v.txt
+[INFO] (aes.utils)   epochs: 50
+[INFO] (aes.utils)   model_type: gate-positional
+[INFO] (aes.utils)   out_dir: output_tst
+[INFO] (aes.utils)   prompt_id: 4
+[INFO] (aes.utils)   test_path: data/train_34/test.tsv
+[INFO] (aes.utils)   train_path: data/train_34/train.tsv
+[INFO] (aes.utils)   vocab_char_path: None
+[INFO] (aes.utils)   vocab_word_path: None
+[INFO] (aes.utils)   vocab_word_size: 4000
+[INFO] (__main__) char_per_word: 7
+[INFO] (aes.reader) Creating vocabulary from: data/train_34/train.tsv
+[INFO] (aes.reader)   89817 total words, 3833 unique words
+[WARNING] (aes.reader) Vocabualry has only 3836 words (less than 4000)
+[INFO] (aes.reader)   Vocab size: 3836
+[INFO] (aes.reader) Creating char vocabulary from: data/train_34/train.tsv
+[INFO] (aes.reader)   vocab_char size: 50
+[INFO] (aes.reader) Reading dataset from: data/train_34/train.tsv
+[INFO] (aes.reader)   <num> hit rate: 0.00%, <unk> hit rate: 0.00%
+[INFO] (aes.reader) Reading dataset from: data/train_34/dev.tsv
+[INFO] (aes.reader)   <num> hit rate: 0.00%, <unk> hit rate: 2.28%
+[INFO] (aes.reader) Reading dataset from: data/train_34/test.tsv
+[INFO] (aes.reader)   <num> hit rate: 0.00%, <unk> hit rate: 2.31%
+[INFO] (__main__) Processing word data
+[INFO] (__main__) Processing character data
+[INFO] (__main__) Statistics:
+[INFO] (__main__)   train_x shape: (869, 402)
+[INFO] (__main__)   dev_x shape:   (448, 402)
+[INFO] (__main__)   test_x shape:  (454, 402)
+[INFO] (__main__)   train_x_char shape: (869, 2814)
+[INFO] (__main__)   dev_x_char shape:   (448, 2814)
+[INFO] (__main__)   test_x_char shape:  (454, 2814)
+[INFO] (__main__)   train_y shape: (869,)
+[INFO] (__main__)   dev_y shape:   (448,)
+[INFO] (__main__)   test_y shape:  (454,)
+[INFO] (__main__)   train_y mean: 1.4326812, stdev: 0.9359904, MFC: [1.0]
+[INFO] (aes.models) Building gate positional model
+[INFO] (aes.models) Initializing lookup table
+[INFO] (aes.emb_reader) Loading embeddings from: embeddings.w2v.txt
+[INFO] (aes.emb_reader)   #vectors: 100229, #dimensions: 50
+[INFO] (aes.emb_reader) 2600/3836 word vectors initialized (hit rate: 67.78%)
+[INFO] (aes.models)   Done
+[INFO] (__main__) None
+[INFO] (__main__) Saving model architecture
+[INFO] (__main__)   Done
+[INFO] (__main__) -------------------------------------------------------------------------
+[INFO] (__main__) Initial Evaluation:
+[INFO] (aes.evaluator) [D] loss: 0.1018 metric: 0.2758 mean: 1.402 (1.420) stdev: 0.009 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0967 metric: 0.2685 mean: 1.401 (1.438) stdev: 0.010 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.000 (Best @ -1: {{0.000}}, 0.000, -0.144, -0.129, -0.094)
+[INFO] (aes.evaluator) [T] QWK:  0.000 (Best @ -1: {{0.000}}, 0.000, -0.090, -0.101, -0.076)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 0, train: 56s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0640, metric: 0.2043
+[INFO] (aes.evaluator) [D] loss: 0.0628 metric: 0.2111 mean: 1.013 (1.420) stdev: 0.614 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0598 metric: 0.2076 mean: 1.058 (1.438) stdev: 0.625 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.597 (Best @ 0: {{0.597}}, 0.396, 0.759, 0.785, 0.648)
+[INFO] (aes.evaluator) [T] QWK:  0.587 (Best @ 0: {{0.587}}, 0.390, 0.743, 0.777, 0.635)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 1, train: 60s, evaluation: 37s
+[INFO] (__main__) [Train] loss: 0.0457, metric: 0.1686
+[INFO] (aes.evaluator) [D] loss: 0.0450 metric: 0.1625 mean: 1.655 (1.420) stdev: 0.694 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0466 metric: 0.1661 mean: 1.710 (1.438) stdev: 0.694 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.670 (Best @ 1: {{0.670}}, 0.540, 0.788, 0.790, 0.654)
+[INFO] (aes.evaluator) [T] QWK:  0.676 (Best @ 1: {{0.676}}, 0.545, 0.776, 0.783, 0.641)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 2, train: 58s, evaluation: 33s
+[INFO] (__main__) [Train] loss: 0.0430, metric: 0.1624
+[INFO] (aes.evaluator) [D] loss: 0.0415 metric: 0.1655 mean: 1.320 (1.420) stdev: 0.619 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0400 metric: 0.1615 mean: 1.367 (1.438) stdev: 0.623 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.627 (Best @ 1: {{0.670}}, 0.540, 0.788, 0.790, 0.654)
+[INFO] (aes.evaluator) [T] QWK:  0.628 (Best @ 1: {{0.676}}, 0.545, 0.776, 0.783, 0.641)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 3, train: 57s, evaluation: 35s
+[INFO] (__main__) [Train] loss: 0.0418, metric: 0.1613
+[INFO] (aes.evaluator) [D] loss: 0.0366 metric: 0.1522 mean: 1.418 (1.420) stdev: 0.734 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0364 metric: 0.1515 mean: 1.475 (1.438) stdev: 0.737 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.715 (Best @ 3: {{0.715}}, 0.589, 0.800, 0.804, 0.668)
+[INFO] (aes.evaluator) [T] QWK:  0.699 (Best @ 3: {{0.699}}, 0.559, 0.790, 0.798, 0.657)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 4, train: 59s, evaluation: 32s
+[INFO] (__main__) [Train] loss: 0.0420, metric: 0.1603
+[INFO] (aes.evaluator) [D] loss: 0.0457 metric: 0.1777 mean: 1.147 (1.420) stdev: 0.748 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0431 metric: 0.1733 mean: 1.202 (1.438) stdev: 0.753 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.705 (Best @ 3: {{0.715}}, 0.589, 0.800, 0.804, 0.668)
+[INFO] (aes.evaluator) [T] QWK:  0.685 (Best @ 3: {{0.699}}, 0.559, 0.790, 0.798, 0.657)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 5, train: 59s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0411, metric: 0.1589
+[INFO] (aes.evaluator) [D] loss: 0.0537 metric: 0.1960 mean: 1.045 (1.420) stdev: 0.711 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0501 metric: 0.1906 mean: 1.095 (1.438) stdev: 0.714 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.658 (Best @ 3: {{0.715}}, 0.589, 0.800, 0.804, 0.668)
+[INFO] (aes.evaluator) [T] QWK:  0.672 (Best @ 3: {{0.699}}, 0.559, 0.790, 0.798, 0.657)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 6, train: 56s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0388, metric: 0.1550
+[INFO] (aes.evaluator) [D] loss: 0.0395 metric: 0.1656 mean: 1.223 (1.420) stdev: 0.726 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0371 metric: 0.1598 mean: 1.275 (1.438) stdev: 0.727 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.729 (Best @ 6: {{0.729}}, 0.578, 0.810, 0.822, 0.687)
+[INFO] (aes.evaluator) [T] QWK:  0.704 (Best @ 6: {{0.704}}, 0.551, 0.804, 0.819, 0.679)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 7, train: 58s, evaluation: 36s
+[INFO] (__main__) [Train] loss: 0.0372, metric: 0.1509
+[INFO] (aes.evaluator) [D] loss: 0.0347 metric: 0.1533 mean: 1.317 (1.420) stdev: 0.756 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0330 metric: 0.1479 mean: 1.373 (1.438) stdev: 0.757 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.746 (Best @ 7: {{0.746}}, 0.607, 0.819, 0.827, 0.692)
+[INFO] (aes.evaluator) [T] QWK:  0.738 (Best @ 7: {{0.738}}, 0.603, 0.814, 0.824, 0.684)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 8, train: 59s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0360, metric: 0.1498
+[INFO] (aes.evaluator) [D] loss: 0.0346 metric: 0.1537 mean: 1.300 (1.420) stdev: 0.762 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0325 metric: 0.1475 mean: 1.355 (1.438) stdev: 0.762 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.755 (Best @ 8: {{0.755}}, 0.620, 0.822, 0.831, 0.697)
+[INFO] (aes.evaluator) [T] QWK:  0.750 (Best @ 8: {{0.750}}, 0.617, 0.819, 0.829, 0.690)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 9, train: 59s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0339, metric: 0.1457
+[INFO] (aes.evaluator) [D] loss: 0.0608 metric: 0.1948 mean: 1.901 (1.420) stdev: 0.603 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0622 metric: 0.1989 mean: 1.947 (1.438) stdev: 0.601 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.657 (Best @ 8: {{0.755}}, 0.620, 0.822, 0.831, 0.697)
+[INFO] (aes.evaluator) [T] QWK:  0.630 (Best @ 8: {{0.750}}, 0.617, 0.819, 0.829, 0.690)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 10, train: 58s, evaluation: 35s
+[INFO] (__main__) [Train] loss: 0.0353, metric: 0.1462
+[INFO] (aes.evaluator) [D] loss: 0.0563 metric: 0.1856 mean: 1.877 (1.420) stdev: 0.658 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0584 metric: 0.1911 mean: 1.928 (1.438) stdev: 0.656 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.665 (Best @ 8: {{0.755}}, 0.620, 0.822, 0.831, 0.697)
+[INFO] (aes.evaluator) [T] QWK:  0.654 (Best @ 8: {{0.750}}, 0.617, 0.819, 0.829, 0.690)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 11, train: 56s, evaluation: 35s
+[INFO] (__main__) [Train] loss: 0.0339, metric: 0.1439
+[INFO] (aes.evaluator) [D] loss: 0.0318 metric: 0.1405 mean: 1.490 (1.420) stdev: 0.724 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0307 metric: 0.1376 mean: 1.543 (1.438) stdev: 0.721 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.735 (Best @ 8: {{0.755}}, 0.620, 0.822, 0.831, 0.697)
+[INFO] (aes.evaluator) [T] QWK:  0.741 (Best @ 8: {{0.750}}, 0.617, 0.819, 0.829, 0.690)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 12, train: 58s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0328, metric: 0.1423
+[INFO] (aes.evaluator) [D] loss: 0.0316 metric: 0.1456 mean: 1.348 (1.420) stdev: 0.775 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0293 metric: 0.1398 mean: 1.404 (1.438) stdev: 0.772 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.775 (Best @ 12: {{0.775}}, 0.649, 0.834, 0.842, 0.709)
+[INFO] (aes.evaluator) [T] QWK:  0.762 (Best @ 12: {{0.762}}, 0.631, 0.835, 0.844, 0.707)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 13, train: 57s, evaluation: 35s
+[INFO] (__main__) [Train] loss: 0.0310, metric: 0.1383
+[INFO] (aes.evaluator) [D] loss: 0.0646 metric: 0.2178 mean: 0.928 (1.420) stdev: 0.686 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0598 metric: 0.2109 mean: 0.963 (1.438) stdev: 0.668 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.643 (Best @ 12: {{0.775}}, 0.649, 0.834, 0.842, 0.709)
+[INFO] (aes.evaluator) [T] QWK:  0.630 (Best @ 12: {{0.762}}, 0.631, 0.835, 0.844, 0.707)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 14, train: 56s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0314, metric: 0.1395
+[INFO] (aes.evaluator) [D] loss: 0.0341 metric: 0.1423 mean: 1.623 (1.420) stdev: 0.766 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0344 metric: 0.1448 mean: 1.680 (1.438) stdev: 0.765 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.752 (Best @ 12: {{0.775}}, 0.649, 0.834, 0.842, 0.709)
+[INFO] (aes.evaluator) [T] QWK:  0.740 (Best @ 12: {{0.762}}, 0.631, 0.835, 0.844, 0.707)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 15, train: 58s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0290, metric: 0.1340
+[INFO] (aes.evaluator) [D] loss: 0.0406 metric: 0.1695 mean: 1.151 (1.420) stdev: 0.778 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0361 metric: 0.1613 mean: 1.201 (1.438) stdev: 0.769 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.743 (Best @ 12: {{0.775}}, 0.649, 0.834, 0.842, 0.709)
+[INFO] (aes.evaluator) [T] QWK:  0.745 (Best @ 12: {{0.762}}, 0.631, 0.835, 0.844, 0.707)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 16, train: 56s, evaluation: 33s
+[INFO] (__main__) [Train] loss: 0.0287, metric: 0.1345
+[INFO] (aes.evaluator) [D] loss: 0.0352 metric: 0.1443 mean: 1.653 (1.420) stdev: 0.800 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0361 metric: 0.1498 mean: 1.714 (1.438) stdev: 0.800 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.754 (Best @ 12: {{0.775}}, 0.649, 0.834, 0.842, 0.709)
+[INFO] (aes.evaluator) [T] QWK:  0.744 (Best @ 12: {{0.762}}, 0.631, 0.835, 0.844, 0.707)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 17, train: 56s, evaluation: 35s
+[INFO] (__main__) [Train] loss: 0.0271, metric: 0.1316
+[INFO] (aes.evaluator) [D] loss: 0.0344 metric: 0.1431 mean: 1.633 (1.420) stdev: 0.743 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0340 metric: 0.1446 mean: 1.687 (1.438) stdev: 0.741 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.745 (Best @ 12: {{0.775}}, 0.649, 0.834, 0.842, 0.709)
+[INFO] (aes.evaluator) [T] QWK:  0.743 (Best @ 12: {{0.762}}, 0.631, 0.835, 0.844, 0.707)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 18, train: 57s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0267, metric: 0.1312
+[INFO] (aes.evaluator) [D] loss: 0.0418 metric: 0.1703 mean: 1.128 (1.420) stdev: 0.830 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0367 metric: 0.1621 mean: 1.183 (1.438) stdev: 0.824 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.748 (Best @ 12: {{0.775}}, 0.649, 0.834, 0.842, 0.709)
+[INFO] (aes.evaluator) [T] QWK:  0.760 (Best @ 12: {{0.762}}, 0.631, 0.835, 0.844, 0.707)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 19, train: 56s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0258, metric: 0.1278
+[INFO] (aes.evaluator) [D] loss: 0.0313 metric: 0.1387 mean: 1.545 (1.420) stdev: 0.750 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0296 metric: 0.1361 mean: 1.596 (1.438) stdev: 0.747 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.751 (Best @ 12: {{0.775}}, 0.649, 0.834, 0.842, 0.709)
+[INFO] (aes.evaluator) [T] QWK:  0.741 (Best @ 12: {{0.762}}, 0.631, 0.835, 0.844, 0.707)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 20, train: 57s, evaluation: 35s
+[INFO] (__main__) [Train] loss: 0.0258, metric: 0.1278
+[INFO] (aes.evaluator) [D] loss: 0.0303 metric: 0.1420 mean: 1.372 (1.420) stdev: 0.775 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0271 metric: 0.1350 mean: 1.424 (1.438) stdev: 0.770 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.771 (Best @ 12: {{0.775}}, 0.649, 0.834, 0.842, 0.709)
+[INFO] (aes.evaluator) [T] QWK:  0.789 (Best @ 12: {{0.762}}, 0.631, 0.835, 0.844, 0.707)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 21, train: 55s, evaluation: 36s
+[INFO] (__main__) [Train] loss: 0.0246, metric: 0.1237
+[INFO] (aes.evaluator) [D] loss: 0.0312 metric: 0.1446 mean: 1.315 (1.420) stdev: 0.843 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0277 metric: 0.1378 mean: 1.373 (1.438) stdev: 0.841 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.803 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.814 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 22, train: 56s, evaluation: 33s
+[INFO] (__main__) [Train] loss: 0.0238, metric: 0.1227
+[INFO] (aes.evaluator) [D] loss: 0.0315 metric: 0.1465 mean: 1.314 (1.420) stdev: 0.799 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0277 metric: 0.1384 mean: 1.364 (1.438) stdev: 0.793 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.792 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.791 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 23, train: 54s, evaluation: 33s
+[INFO] (__main__) [Train] loss: 0.0238, metric: 0.1242
+[INFO] (aes.evaluator) [D] loss: 0.0652 metric: 0.2158 mean: 0.911 (1.420) stdev: 0.764 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0599 metric: 0.2083 mean: 0.945 (1.438) stdev: 0.745 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.660 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.666 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 24, train: 56s, evaluation: 33s
+[INFO] (__main__) [Train] loss: 0.0230, metric: 0.1204
+[INFO] (aes.evaluator) [D] loss: 0.0407 metric: 0.1690 mean: 1.146 (1.420) stdev: 0.780 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0360 metric: 0.1609 mean: 1.187 (1.438) stdev: 0.768 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.736 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.748 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 25, train: 58s, evaluation: 35s
+[INFO] (__main__) [Train] loss: 0.0218, metric: 0.1188
+[INFO] (aes.evaluator) [D] loss: 0.0570 metric: 0.2007 mean: 0.978 (1.420) stdev: 0.774 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0519 metric: 0.1935 mean: 1.013 (1.438) stdev: 0.756 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.684 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.693 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 26, train: 56s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0224, metric: 0.1194
+[INFO] (aes.evaluator) [D] loss: 0.0350 metric: 0.1464 mean: 1.641 (1.420) stdev: 0.737 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0334 metric: 0.1442 mean: 1.686 (1.438) stdev: 0.735 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.734 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.735 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 27, train: 54s, evaluation: 33s
+[INFO] (__main__) [Train] loss: 0.0208, metric: 0.1147
+[INFO] (aes.evaluator) [D] loss: 0.0547 metric: 0.1953 mean: 0.996 (1.420) stdev: 0.811 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0491 metric: 0.1873 mean: 1.036 (1.438) stdev: 0.798 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.691 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.709 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 28, train: 56s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0209, metric: 0.1152
+[INFO] (aes.evaluator) [D] loss: 0.0365 metric: 0.1498 mean: 1.676 (1.420) stdev: 0.763 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0355 metric: 0.1500 mean: 1.723 (1.438) stdev: 0.764 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.741 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.735 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 29, train: 56s, evaluation: 33s
+[INFO] (__main__) [Train] loss: 0.0199, metric: 0.1122
+[INFO] (aes.evaluator) [D] loss: 0.0531 metric: 0.1917 mean: 1.011 (1.420) stdev: 0.824 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0478 metric: 0.1845 mean: 1.051 (1.438) stdev: 0.812 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.696 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.713 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 30, train: 56s, evaluation: 33s
+[INFO] (__main__) [Train] loss: 0.0206, metric: 0.1165
+[INFO] (aes.evaluator) [D] loss: 0.0298 metric: 0.1384 mean: 1.456 (1.420) stdev: 0.800 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0271 metric: 0.1341 mean: 1.503 (1.438) stdev: 0.798 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.782 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.798 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 31, train: 56s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0192, metric: 0.1115
+[INFO] (aes.evaluator) [D] loss: 0.0531 metric: 0.1807 mean: 1.875 (1.420) stdev: 0.748 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0536 metric: 0.1873 mean: 1.921 (1.438) stdev: 0.751 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.678 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.688 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 32, train: 56s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0190, metric: 0.1103
+[INFO] (aes.evaluator) [D] loss: 0.0327 metric: 0.1430 mean: 1.565 (1.420) stdev: 0.743 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0304 metric: 0.1394 mean: 1.605 (1.438) stdev: 0.742 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.741 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.743 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 33, train: 57s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0194, metric: 0.1114
+[INFO] (aes.evaluator) [D] loss: 0.0300 metric: 0.1394 mean: 1.434 (1.420) stdev: 0.831 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0271 metric: 0.1348 mean: 1.482 (1.438) stdev: 0.832 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.800 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.797 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 34, train: 55s, evaluation: 32s
+[INFO] (__main__) [Train] loss: 0.0178, metric: 0.1068
+[INFO] (aes.evaluator) [D] loss: 0.0676 metric: 0.2190 mean: 0.908 (1.420) stdev: 0.732 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0642 metric: 0.2142 mean: 0.931 (1.438) stdev: 0.714 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.639 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.638 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 35, train: 57s, evaluation: 35s
+[INFO] (__main__) [Train] loss: 0.0177, metric: 0.1049
+[INFO] (aes.evaluator) [D] loss: 0.0343 metric: 0.1443 mean: 1.626 (1.420) stdev: 0.840 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0333 metric: 0.1453 mean: 1.678 (1.438) stdev: 0.843 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.770 (Best @ 21: {{0.803}}, 0.674, 0.840, 0.851, 0.718)
+[INFO] (aes.evaluator) [T] QWK:  0.782 (Best @ 21: {{0.814}}, 0.688, 0.849, 0.857, 0.721)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 36, train: 57s, evaluation: 33s
+[INFO] (__main__) [Train] loss: 0.0180, metric: 0.1064
+[INFO] (aes.evaluator) [D] loss: 0.0337 metric: 0.1504 mean: 1.278 (1.420) stdev: 0.851 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0297 metric: 0.1440 mean: 1.326 (1.438) stdev: 0.851 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.806 (Best @ 36: {{0.806}}, 0.673, 0.833, 0.844, 0.710)
+[INFO] (aes.evaluator) [T] QWK:  0.803 (Best @ 36: {{0.803}}, 0.677, 0.843, 0.852, 0.713)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 37, train: 54s, evaluation: 33s
+[INFO] (__main__) [Train] loss: 0.0174, metric: 0.1051
+[INFO] (aes.evaluator) [D] loss: 0.0321 metric: 0.1461 mean: 1.322 (1.420) stdev: 0.851 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0284 metric: 0.1400 mean: 1.370 (1.438) stdev: 0.851 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.801 (Best @ 36: {{0.806}}, 0.673, 0.833, 0.844, 0.710)
+[INFO] (aes.evaluator) [T] QWK:  0.802 (Best @ 36: {{0.803}}, 0.677, 0.843, 0.852, 0.713)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 38, train: 54s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0165, metric: 0.1012
+[INFO] (aes.evaluator) [D] loss: 0.0310 metric: 0.1411 mean: 1.448 (1.420) stdev: 0.834 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0281 metric: 0.1371 mean: 1.495 (1.438) stdev: 0.836 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.798 (Best @ 36: {{0.806}}, 0.673, 0.833, 0.844, 0.710)
+[INFO] (aes.evaluator) [T] QWK:  0.788 (Best @ 36: {{0.803}}, 0.677, 0.843, 0.852, 0.713)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 39, train: 56s, evaluation: 33s
+[INFO] (__main__) [Train] loss: 0.0159, metric: 0.1002
+[INFO] (aes.evaluator) [D] loss: 0.0324 metric: 0.1415 mean: 1.539 (1.420) stdev: 0.900 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0307 metric: 0.1410 mean: 1.594 (1.438) stdev: 0.906 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.812 (Best @ 39: {{0.812}}, 0.690, 0.840, 0.846, 0.712)
+[INFO] (aes.evaluator) [T] QWK:  0.800 (Best @ 39: {{0.800}}, 0.668, 0.851, 0.854, 0.716)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 40, train: 55s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0169, metric: 0.1022
+[INFO] (aes.evaluator) [D] loss: 0.0307 metric: 0.1419 mean: 1.413 (1.420) stdev: 0.828 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0274 metric: 0.1362 mean: 1.457 (1.438) stdev: 0.830 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.799 (Best @ 39: {{0.812}}, 0.690, 0.840, 0.846, 0.712)
+[INFO] (aes.evaluator) [T] QWK:  0.789 (Best @ 39: {{0.800}}, 0.668, 0.851, 0.854, 0.716)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 41, train: 57s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0146, metric: 0.0951
+[INFO] (aes.evaluator) [D] loss: 0.0459 metric: 0.1779 mean: 1.092 (1.420) stdev: 0.833 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0410 metric: 0.1700 mean: 1.131 (1.438) stdev: 0.827 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.730 (Best @ 39: {{0.812}}, 0.690, 0.840, 0.846, 0.712)
+[INFO] (aes.evaluator) [T] QWK:  0.742 (Best @ 39: {{0.800}}, 0.668, 0.851, 0.854, 0.716)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 42, train: 57s, evaluation: 35s
+[INFO] (__main__) [Train] loss: 0.0155, metric: 0.0977
+[INFO] (aes.evaluator) [D] loss: 0.0404 metric: 0.1596 mean: 1.677 (1.420) stdev: 0.706 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0379 metric: 0.1560 mean: 1.706 (1.438) stdev: 0.712 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.716 (Best @ 39: {{0.812}}, 0.690, 0.840, 0.846, 0.712)
+[INFO] (aes.evaluator) [T] QWK:  0.715 (Best @ 39: {{0.800}}, 0.668, 0.851, 0.854, 0.716)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 43, train: 56s, evaluation: 34s
+[INFO] (__main__) [Train] loss: 0.0146, metric: 0.0945
+[INFO] (aes.evaluator) [D] loss: 0.0433 metric: 0.1618 mean: 1.764 (1.420) stdev: 0.811 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0427 metric: 0.1652 mean: 1.808 (1.438) stdev: 0.818 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.712 (Best @ 39: {{0.812}}, 0.690, 0.840, 0.846, 0.712)
+[INFO] (aes.evaluator) [T] QWK:  0.716 (Best @ 39: {{0.800}}, 0.668, 0.851, 0.854, 0.716)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 44, train: 58s, evaluation: 35s
+[INFO] (__main__) [Train] loss: 0.0150, metric: 0.0957
+[INFO] (aes.evaluator) [D] loss: 0.0326 metric: 0.1421 mean: 1.570 (1.420) stdev: 0.841 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0306 metric: 0.1404 mean: 1.616 (1.438) stdev: 0.847 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.779 (Best @ 39: {{0.812}}, 0.690, 0.840, 0.846, 0.712)
+[INFO] (aes.evaluator) [T] QWK:  0.797 (Best @ 39: {{0.800}}, 0.668, 0.851, 0.854, 0.716)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 45, train: 56s, evaluation: 33s
+[INFO] (__main__) [Train] loss: 0.0147, metric: 0.0948
+[INFO] (aes.evaluator) [D] loss: 0.0472 metric: 0.1687 mean: 1.805 (1.420) stdev: 0.820 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0469 metric: 0.1733 mean: 1.850 (1.438) stdev: 0.826 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.704 (Best @ 39: {{0.812}}, 0.690, 0.840, 0.846, 0.712)
+[INFO] (aes.evaluator) [T] QWK:  0.706 (Best @ 39: {{0.800}}, 0.668, 0.851, 0.854, 0.716)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 46, train: 54s, evaluation: 32s
+[INFO] (__main__) [Train] loss: 0.0149, metric: 0.0950
+[INFO] (aes.evaluator) [D] loss: 0.0311 metric: 0.1422 mean: 1.427 (1.420) stdev: 0.812 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0279 metric: 0.1370 mean: 1.467 (1.438) stdev: 0.815 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.790 (Best @ 39: {{0.812}}, 0.690, 0.840, 0.846, 0.712)
+[INFO] (aes.evaluator) [T] QWK:  0.784 (Best @ 39: {{0.800}}, 0.668, 0.851, 0.854, 0.716)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 47, train: 53s, evaluation: 32s
+[INFO] (__main__) [Train] loss: 0.0141, metric: 0.0931
+[INFO] (aes.evaluator) [D] loss: 0.0548 metric: 0.1846 mean: 1.883 (1.420) stdev: 0.775 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0540 metric: 0.1878 mean: 1.922 (1.438) stdev: 0.782 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.677 (Best @ 39: {{0.812}}, 0.690, 0.840, 0.846, 0.712)
+[INFO] (aes.evaluator) [T] QWK:  0.671 (Best @ 39: {{0.800}}, 0.668, 0.851, 0.854, 0.716)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 48, train: 54s, evaluation: 32s
+[INFO] (__main__) [Train] loss: 0.0140, metric: 0.0916
+[INFO] (aes.evaluator) [D] loss: 0.0452 metric: 0.1656 mean: 1.783 (1.420) stdev: 0.815 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0445 metric: 0.1689 mean: 1.826 (1.438) stdev: 0.824 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.708 (Best @ 39: {{0.812}}, 0.690, 0.840, 0.846, 0.712)
+[INFO] (aes.evaluator) [T] QWK:  0.715 (Best @ 39: {{0.800}}, 0.668, 0.851, 0.854, 0.716)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Epoch 49, train: 54s, evaluation: 32s
+[INFO] (__main__) [Train] loss: 0.0135, metric: 0.0923
+[INFO] (aes.evaluator) [D] loss: 0.0390 metric: 0.1610 mean: 1.194 (1.420) stdev: 0.886 (0.956)
+[INFO] (aes.evaluator) [T] loss: 0.0343 metric: 0.1538 mean: 1.241 (1.438) stdev: 0.888 (0.931)
+[INFO] (aes.evaluator) [D] QWK:  0.779 (Best @ 39: {{0.812}}, 0.690, 0.840, 0.846, 0.712)
+[INFO] (aes.evaluator) [T] QWK:  0.775 (Best @ 39: {{0.800}}, 0.668, 0.851, 0.854, 0.716)
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (__main__) Training:   2845 seconds in total
+[INFO] (__main__) Evaluation: 1717 seconds in total
+[INFO] (aes.evaluator) -----------------------------------------------------------------
+[INFO] (aes.evaluator) Missed @ Epoch 21:
+[INFO] (aes.evaluator)   [TEST] QWK: 0.814
+[INFO] (aes.evaluator) Best @ Epoch 39:
+[INFO] (aes.evaluator)   [DEV]  QWK: 0.812, LWK: 0.690, PRS: 0.840, SPR: 0.846, Tau: 0.712
+[INFO] (aes.evaluator)   [TEST] QWK: 0.800, LWK: 0.668, PRS: 0.851, SPR: 0.854, Tau: 0.716
